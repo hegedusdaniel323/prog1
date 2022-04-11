@@ -1,0 +1,10 @@
+alma 1 23
+korte 2 45
+tojas 4 33
+szollo 3 48
+kakas 5 888
+toll 6 4.8
+viz 9 99.9
+szemuveg 7 3.14
+zsebkendo 8 3333
+telefon 10 8782847.1
