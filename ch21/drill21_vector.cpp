@@ -52,15 +52,15 @@ int main(){
     print(vi);
 
     sort(vi.begin(), vi.end(), asc_name);
-    cout<<"Sort by name:\n";
+    //cout<<"Sort by name:\n";
     //print(vi);
     
     sort(vi.begin(), vi.end(), asc_iid);
-    cout<<"Sort by id:\n";
+    //cout<<"Sort by id:\n";
     //print(vi);
 
     sort(vi.begin(), vi.end(), desc_val);
-    cout<<"Sort by value(descending):\n";
+    //cout<<"Sort by value(descending):\n";
     //print(vi);
 
     vi.push_back(Item{"horse shoe",99,12.34});
@@ -71,7 +71,7 @@ int main(){
     int del_id = 3;
     erase_name(vi, del_name);
     erase_id(vi, del_id);
-    print(vi);
+    //print(vi);
     
 
     return 0;
