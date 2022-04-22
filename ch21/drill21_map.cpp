@@ -12,7 +12,6 @@ ostream& operator<<(ostream& os,map<int,string> m){
     cout<<endl;
     return os;
 }
-
 istream& operator>>(istream& is,map<string,int>& m)
 {
     string key;
@@ -22,8 +21,9 @@ istream& operator>>(istream& is,map<string,int>& m)
     return is;
 }
 
-
 int main(){
+
+    //inserting name,val pairs
     map<string,int> msi;
     msi["lecture0"]=20;
     msi["lecture1"]=21;
@@ -36,21 +36,24 @@ int main(){
     msi["lecture8"]=28;
     msi["lecture9"]=29;
 
+    //erasing old elements, reading new
     msi.erase(msi.begin(),msi.end());
     cout<<"Enter string,int pairs, set the string to x to terminate!\n";
     cin>>msi;
     cout<<endl<<msi;
 
+    //filling a vector with keys
     vector<string>keys;
     for(auto map : msi)
         keys.push_back(map.first);
     
+    //sum
     int sum=0;
     for(auto v : keys)
         sum += msi[v];
     cout<<"Sum of values: "<<sum<<endl<<endl;
 
-    
+    //filling mis
     map<int,string> mis;
     for(auto v : keys)
         mis.insert(pair<int,string>(msi[v],v));
