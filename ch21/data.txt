@@ -7,4 +7,4 @@ toll 6 4.8
 viz 9 99.9
 szemuveg 7 3.14
 zsebkendo 8 3333
-telefon 10 8782847.1
+telefon 10 8747.1

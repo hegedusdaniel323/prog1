@@ -24,13 +24,21 @@ bool desc_val(Item l1, Item l2){
 }
 
 
-void erase_name(list<Item> li, string s){
+void erase_name(list<Item>& li, string s){
     list<Item>::iterator it = li.begin();
     while(it != li.end()){
         if(it->name == s) li.erase(it++);
         else it++;
     }
 }
+void erase_id(list<Item>& li, int id){
+    list<Item>::iterator it = li.begin();
+    while(it != li.end()){
+        if(it->iid == id) li.erase(it++);
+        else it++;
+    }
+}
+
 
 int main(){
     
@@ -45,7 +53,7 @@ int main(){
     cout<<"Elements of the list:\n";
     print(li);
 
-    /*cout<<"Sort by name:\n";
+    cout<<"Sort by name:\n";
     li.sort(asc_name);
     print(li);
     cout<<"Sort by id:\n";
@@ -53,15 +61,17 @@ int main(){
     print(li);
     cout<<"Sort by value(desc):\n";
     li.sort(desc_val);
-    print(li);*/
+    print(li);
 
     li.push_back(Item{"horse shoe",99,12.34});
     li.push_back(Item{"Canon S400",9988,499.95});
     //print(li);
 
+    int del_id = 3;
     string del_name = "alma";
     erase_name(li, del_name);
-    print(li);
+    erase_id(li, del_id);
+    //print(li);
 
     return 0;
 }

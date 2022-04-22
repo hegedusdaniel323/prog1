@@ -13,23 +13,15 @@ ostream& operator<<(ostream& os,map<int,string> m){
     return os;
 }
 
-/*istream& operator>>(istream& is,map<string,int> m)
+istream& operator>>(istream& is,map<string,int>& m)
 {
     string key;
     int val;
     while(cin>>key>>val)
         if(key !="x") m[key] = val;
-        else break;
     return is;
+}
 
-}*/
-
-/*void read(map<string,int> m){
-    string key;
-    int val;
-    while(cin>>key>>val)
-        if(key !="x") m[key] = val;
-}*/
 
 int main(){
     map<string,int> msi;
@@ -44,17 +36,10 @@ int main(){
     msi["lecture8"]=28;
     msi["lecture9"]=29;
 
-    //msi.erase(msi.begin(),msi.end());
-    
-    /*string key;
-    int val;
-    while(cin>>key>>val)
-        if(key !="x") msi[key] = val;
-        else break;
-    */
-    //read(msi);
-
-    cout<<msi;
+    msi.erase(msi.begin(),msi.end());
+    cout<<"Enter string,int pairs, set the string to x to terminate!\n";
+    cin>>msi;
+    cout<<endl<<msi;
 
     vector<string>keys;
     for(auto map : msi)
@@ -67,10 +52,8 @@ int main(){
 
     
     map<int,string> mis;
-    for(auto map : msi)
-        for(auto v : keys)
-            mis.insert(pair<int,string>(msi[v],v));
-
+    for(auto v : keys)
+        mis.insert(pair<int,string>(msi[v],v));
     cout<<mis;
     
     
