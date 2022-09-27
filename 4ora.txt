@@ -1,0 +1,119 @@
+Comparator<Auto> compareByLoero = Comparator.comparing( Auto::getLoero );
+
+//-----------------------------
+
+
+public class Auto {
+    private String marka;
+    private String tipus;
+    private int loero;
+    private static int count = 0;
+
+    public  Auto(){
+        this.marka="";
+        this.tipus="";
+        this.loero=0;
+        Auto.count++;
+    }
+
+    public  Auto(String marka, String tipus, int loero){
+        this.marka=marka;
+        this.tipus=tipus;
+        this.loero=loero;
+        Auto.count++;
+    }
+
+    public void setMarka(String marka) {
+        this.marka = marka;
+    }
+
+    public void setTipus(String tipus) {
+        this.tipus = tipus;
+    }
+
+
+    public void setLoero(int loero) {
+        if(loero>0){
+            this.loero = loero;
+        }
+    }
+
+    public static void setCount(int count) {
+        Auto.count = count;
+    }
+
+    public String getMarka() {
+        return marka;
+    }
+
+    public String getTipus() {
+        return tipus;
+    }
+
+    public int getLoero() {
+        return loero;
+    }
+
+    public static int getCount() {
+        return count;
+    }
+
+    @Override
+    public String toString() {
+        return ("\nmarka: "+this.getMarka()+","+
+                " tipus: " + this.getTipus() +","+
+                " loero: "+ this.getLoero());
+    }
+
+}
+
+
+//----------------------------------------------
+
+import java.util.*;
+
+public class ArList {
+    public static void main(String[] args) {
+        ArrayList<Integer> numbers = new ArrayList<>();
+        numbers.add(20);
+        numbers.add(150);
+        numbers.add(100);
+        numbers.add(35);
+        numbers.add(10);
+
+        System.out.println(numbers.get(0));
+        numbers.set(0,21);
+        //numbers.remove(2);
+        System.out.println(numbers.size());
+        System.out.println(numbers.get(0));
+
+        for(int i=0; i < numbers.size(); i++){
+            System.out.println(numbers.get(i));
+        }
+        for (Integer i : numbers){
+            System.out.println(i);
+        }
+
+        //rendezés
+        Collections.sort(numbers);
+        numbers.sort(((o1, o2) -> o1-o2));
+        numbers.sort((Comparator.comparingInt(o -> o)));
+        System.out.println(numbers);
+
+
+        String s[] = new String[] {"A","B","C","D"};
+        List<String> list = Arrays.asList(s);
+        System.out.println(list);
+
+        LinkedList<Integer> linked = new LinkedList<>();
+        linked.add(1);
+        linked.add(2);
+        linked.add(3);
+        linked.add(4);
+        linked.addLast(5);
+        linked.addFirst(0);
+        System.out.println(linked.get(0));
+        System.out.println(linked);
+
+    }
+}
